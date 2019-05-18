@@ -1,0 +1,10 @@
+2019-05-17 23:20:44,526: ERROR mygategory  : error
+2019-05-17 23:23:55,358: ERROR mygategory  : error
+2019-05-17 23:46:12,590: WARN mycategory  : wern
+2019-05-17 23:53:55,635: WARN mycategory  : wern
+2019-05-17 23:53:55,636: INFO mycategory  : info
+2019-05-17 23:53:55,636: INFO mycategory  : info
+2019-05-17 23:53:55,637: ERROR mycategory  : error
+2019-05-17 23:53:55,637: ERROR mycategory  : error
+2019-05-17 23:53:55,637: ERROR mycategory  : error
+2019-05-17 23:53:55,637: ERROR mycategory  : error
