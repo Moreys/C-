@@ -13,7 +13,7 @@
 using namespace std;
 using namespace log4cpp;
 
-namespace wdCadd
+namespace morey
 {
 
 class  Mylogger
