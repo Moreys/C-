@@ -5,6 +5,10 @@
 namespace morey
 {
 
+MyString::MyString() : _pstr(new char[1]())
+    {
+                cout << "String()" << endl;
+    }
 MyString::MyString(int len)
 {
     if(0 == len)
