@@ -43,6 +43,8 @@ CowString::~CowString()
 char & CowString::operator[](int idx)
 {
     cout << "char & operator[](int idx)" << endl;
+    //读时共享 判断条件，为
+    //
     if(idx >= 0 && idx < size())
     {
         if(refcount() > 1)
@@ -53,6 +55,10 @@ char & CowString::operator[](int idx)
             initRefcount();
         }
         return _pstr[idx];
+    }
+    else if(idx <= 0 && idx > size())
+    {
+        if()
     }
     else
     {
