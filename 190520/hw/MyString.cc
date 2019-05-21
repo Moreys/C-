@@ -82,16 +82,31 @@ MyString & MyString::operator= (const char *pstr)
 
 MyString & MyString::operator+=(const MyString &pstr)
 {
+    _pstr = new char[_len + 1];
+    strcat(_pstr, pstr._pstr);
+    return  *this;
+}
+//有问题,不能正常进行
+MyString & MyString::operator+=(const char *pstr)
+{
     if(nullptr == _pstr)
     {
         delete [] _pstr;
         _len = 0;
-    }    
-
-}
-MyString & MyString::operator+=(const char *rhs)
-{
-
+    }
+    else if(nullptr == pstr)
+    {
+        _len = 0;
+        _pstr = new char[_len + 1];
+        strcat(_pstr, "");
+    }
+    else
+    {
+        _len = strlen(pstr);
+        _pstr = new char[_len + 1];
+        strcat(_pstr, pstr);
+    }
+    return *this;
 }
 
 //要判断是否访问越界 如果越界就返回\0
@@ -140,42 +155,65 @@ const char * MyString::c_str() const
     return _pstr;
 }
 
-std::istream &operator>>(std::istream &is, MyString &s)
+std::istream &operator>>(std::istream &in, MyString &pstr)
 {
-
+    cin >> pstr._pstr;
+    return in;
 }
 
-bool operator==(const MyString &, const MyString &)
+bool operator==(const MyString &pstr1, const MyString &pstr2)
 {
-
+    if(pstr1.length() != pstr2.length())
+    {
+        return false;
+    }
+    return !strcmp(pstr1._pstr, pstr2._pstr);
 }
 
-bool operator!=(const MyString &, const MyString &)
+bool operator!=(const MyString &pstr1, const MyString &pstr2)
 {
-
+    return !(pstr1 == pstr2 );
 }
 
-bool operator<(const MyString &, const MyString &)
+bool operator<(const MyString &pstr1, const MyString &pstr2)
 {
-
+    return strcmp(pstr1._pstr, pstr2._pstr);
 }
-bool operator>(const MyString &, const MyString &)
+bool operator>(const MyString &pstr1, const MyString &pstr2)
 {
-
-}
-
-bool operator<=(const MyString &, const MyString &)
-{
-
+    
+    return strcmp(pstr1._pstr, pstr2._pstr);
 }
 
-bool operator>=(const MyString &, const MyString &)
+bool operator<=(const MyString &pstr1, const MyString &pstr2)
 {
-
+    if(strcmp(pstr1._pstr, pstr2._pstr) == 0)
+    {
+        return true;
+    }
+    else if(strcmp(pstr1._pstr, pstr2._pstr) == -1)
+    {
+        return true;
+    }
+    return  false;
 }
 
-std::ostream &operator<<(std::ostream &os, const MyString &s)
+bool operator>=(const MyString &pstr1, const MyString &pstr2)
 {
+    if(strcmp(pstr1._pstr, pstr2._pstr) == 0)
+    {
+        return true;
+    }
+    else if(strcmp(pstr1._pstr, pstr2._pstr) == 1)
+    {
+        return true;
+    }
+    return false;
+}
 
+std::ostream &operator<<(std::ostream &out, const MyString &pstr)
+{
+    cout << pstr._pstr;
+    return out;
 }
 }//end of namespace morey

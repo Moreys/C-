@@ -1,6 +1,7 @@
 #ifndef __MYSTRING_H__
 #define __MYSTRING_H__
 #include <string.h>
+#include <stdio.h>
 #include <iostream>
 using namespace std;
 
