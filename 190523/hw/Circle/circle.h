@@ -15,9 +15,32 @@ public:
     double getArea();
     double getPerimeter();
     void show();
-private:
+    double getR()
+    {
+        return _r;
+    }
+    void setR(double r)
+    {
+        _r = r;
+    }
+
     int _r;
 
+};
+
+class Cylinder : public Circle
+{
+
+public:
+    Cylinder(double r, double h);
+
+public :
+    double getVolume();
+    void showVolume();
+
+private:
+    double _h;
+    
 };
 
 #endif

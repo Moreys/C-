@@ -3,10 +3,12 @@
 
 int main()
 {
-    Circle c1 = 5;
+    Cylinder c1(10, 10);
     c1.getArea();
     c1.getPerimeter();
     c1.show();
+    c1.getVolume();
+    c1.showVolume();
     std::cout << "Hello world" << std::endl;
     return 0;
 }

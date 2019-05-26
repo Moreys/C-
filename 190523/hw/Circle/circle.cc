@@ -21,10 +21,10 @@ double Circle::getArea()
 {
   return _r * _r * PI;
 }
-
+//直径
 double Circle::getPerimeter()
 {
-    return 2 * _r;
+    return 2 * PI * _r;
 }
 
 void Circle::show()
@@ -35,3 +35,18 @@ void Circle::show()
 }
 
 
+
+Cylinder::Cylinder(double r, double h)
+    : Circle(r)
+    , _h(h)
+{
+    cout << "Cylinder()" << endl;
+}
+double Cylinder::getVolume()
+{
+    return getArea() * _h;
+}
+void Cylinder::showVolume()
+{
+    cout << "Volume = " << getVolume() << endl;
+}
