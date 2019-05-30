@@ -11,16 +11,6 @@
 
 using namespace std;
 
-using std::ifstream;
-using std::ofstream;
-using std::endl;
-using std::cout;
-using std::unordered_map;
-using std::map;
-using std::set;
-using std::vector;
-using std::string;
-
 template <typename Container>
 void display(const Container & c)
 {
@@ -31,7 +21,7 @@ void display(const Container & c)
     cout << endl;
 }
 
-
+class QueryResult;
 class TestQuery
 {
 public:
@@ -41,7 +31,9 @@ public:
     void query(const string & word);
     
 private:
-    unordered_map<int, string> _lines;
+    vector<string> _file;
+    map<string, set<
+
     map<string, set<int>> _word2Line;
     map<string, int> dict;
 };
@@ -58,39 +50,20 @@ void TestQuery::readFile(const string filename)
     }
     string line;
     int idx = 1;
+    set<int>temp;
     while( getline(ifs,line))
     {
-            
         _lines.insert(unordered_map<int, string>::value_type(1,line));
-        _lines[idx++] = line;
-    }
-    string value;
-    int idx2 = 1;
-    while( getline(ifs, value))
-    {
-        istringstream sst(value);
-        string key;
-         set<int>number;
-        while(sst >> key)
+        _lines[idx++];
+        istringstream iss(line);
+        string word;
+        while(iss >> word)
         {
-            number.insert(idx2++);
-            _word2Line[key] = number;
-           auto ret =  _word2Line.insert({key,number});
-           if(!ret.second)
-          {
-            number.insert(idx2++);
-            _word2Line[key] = number;
-          }
+            _word2Line[word];
+            temp.insert(idx);
         }
     }
-    for(map<string, set<int>>::iterator it = _word2Line.begin(); it != _word2Line.end(); ++ it)
-    {
-        set<int>st = it->second;
-        for(auto &it1:it->second)
-            cout << it1 << endl;
-        
-    }
-
+    set<int>::iterator initert;
 }
 
 //给定单词输出所有行
