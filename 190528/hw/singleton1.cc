@@ -10,12 +10,12 @@ template <typename Type>
 class Singleton
 {
 public:
-    template < typename... Args>
-    static Type * getInstance(Args... args)
+    template < typename Type1,typename... Args>
+    static Type * getInstance(Type1 t1,Args... args)
     {
-        if(_pInstance)
+        if(nullptr == _pInstance)
         {
-            _pInstance = new Type(args...);
+            _pInstance = new Type(t1,args...);
         }
         return _pInstance;
     }

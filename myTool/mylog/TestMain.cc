@@ -8,7 +8,10 @@ using std::string;
 
 void test1()
 {
-    LogError("error message");
+    int number = 1;
+    const char * p = "hello world";
+
+    LogError("error message, %d, %s",number, p);
     LogWarn("warn message");
     LogDebug("debug message");
     LogInfo("info message");
@@ -17,7 +20,6 @@ int main()
 {
     test1();
     morey::Mylogger::destroy();
-    // printf("Message");
     return 0;
 }
 

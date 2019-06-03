@@ -49,6 +49,7 @@ void Mylogger::debug(const char * msg)
 {
     _myCategory.debug(msg);
 }
+
 void Mylogger::error(const char *msg)
 {
     _myCategory.error(msg);

@@ -33,7 +33,9 @@ public:
                 ++_count[line];
             }
         }
+        ifs.close();
     }
+
     void store(const string & filename)
     {
         
@@ -46,8 +48,9 @@ public:
         //写入有问题
        for(const auto &w : _count)
        {
-        ofs << w.first << " " <<   w.second   << endl;
+        ofs << w.first << "  = " <<   w.second   << endl;
        }
+       ofs.close();
     }
 private:
    map<string, size_t> _count;
