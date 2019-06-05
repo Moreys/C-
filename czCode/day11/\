@@ -154,7 +154,7 @@ void test7()
 {
     string s1 = "AAAbbb";
     //1 函数入口地址  2 函数对象  3 预定义的函数对象
-    //transform(s1.begin(), s1.end(), s1.begin(), toupper);
+    transform(s1.begin(), s1.end(), s1.begin(), toupper);
     cout << "s1 = " << s1 << endl;
 }
 int main()
