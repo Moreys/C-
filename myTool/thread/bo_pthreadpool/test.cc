@@ -21,9 +21,10 @@ class Mytask
 public:
     void process()
     {
-        ::srand(::clock());
+        ::srand(::time(NULL));
+        int number = ::rand() % 100;
         cout << "pid = " << pthread_self()
-            << " number = " << ::rand() % 100 << endl;
+            << " number = " << number << endl;
         ::sleep(1);
     }
 };
