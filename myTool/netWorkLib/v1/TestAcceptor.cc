@@ -20,7 +20,7 @@ using namespace morey;
 
 int main()
 {
-    Acceptor acceptor("47.106.165.214", 8888);
+    Acceptor acceptor("172.17.42.252", 8989);
     acceptor.ready();
     TcpConnection conn(acceptor.accept());
     cout << conn.toString() << "has connected!" << endl;
