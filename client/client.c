@@ -28,7 +28,7 @@ int main(int argc, const char *argv[])
     addr.sin_addr.s_addr = inet_addr("172.17.42.252"); //localhost
     //addr.sin_addr.s_addr = INADDR_ANY; //localhost
    // 172.17.42.252
-    addr.sin_port = htons(2019);
+    addr.sin_port = htons(8989);
     socklen_t len = sizeof addr;
     if(connect(peerfd, (struct sockaddr*)&addr, len) == -1)
         ERR_EXIT("Connect");
